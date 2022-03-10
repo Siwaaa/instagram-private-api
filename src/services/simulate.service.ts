@@ -28,15 +28,15 @@ export class SimulateService extends Repository {
       // () => this.client.creatives.writeSupportedCapabilities(),
       // () => this.client.account.processContactPointSignals(),
       () => this.client.feed.timeline().request({ recoveredFromCrash: '1', reason: 'cold_start_fetch' }),
-      () => this.client.fbsearch.suggestedSearches('users'),
-      () => this.client.fbsearch.suggestedSearches('blended'),
-      () => this.client.fbsearch.recentSearches(),
+      // () => this.client.fbsearch.suggestedSearches('users'), this req returns error, not supported
+      // () => this.client.fbsearch.suggestedSearches('blended'), this req returns error, not supported
+      // () => this.client.fbsearch.recentSearches(), this req returns error, not supported
       () => this.client.direct.rankedRecipients('reshare'),
       () => this.client.direct.rankedRecipients('raven'),
       () => this.client.direct.getPresence(),
       () => this.client.feed.directInbox().request(),
-      () => this.client.media.blocked(),
-      () => this.client.qp.batchFetch(),
+      // () => this.client.media.blocked(), this req returns error, not supported
+      () => this.client.qp.batchFetch().catch(() => undefined),
       () => this.client.qp.getCooldowns(),
       () => this.client.user.arlinkDownloadInfo(),
       () => this.client.discover.topicalExplore(),
