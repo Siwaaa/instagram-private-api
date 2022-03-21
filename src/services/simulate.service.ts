@@ -22,7 +22,7 @@ export class SimulateService extends Repository {
       () => this.client.launcher.postLoginSync(),
       () => this.client.qe.syncExperiments(),
       () => this.client.attribution.logAttribution(),
-      () => this.client.attribution.logResurrectAttribution(),
+      // () => this.client.attribution.logResurrectAttribution(),
       () => this.client.loom.fetchConfig(),
       () => this.client.linkedAccount.getLinkageStatus(),
       // () => this.client.creatives.writeSupportedCapabilities(),
